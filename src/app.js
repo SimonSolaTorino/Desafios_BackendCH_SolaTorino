@@ -16,22 +16,39 @@ const app = express()
 app.listen(8080, ()=>{console.log("escuchando....")})
 
 app.get('/',(request, response)=>{
-    return response.send('hola mundo')
+    return response.send('mi base de datos para el curso de BACKEND de Coder House')
+})
+
+app.get('/products/:pid', (request, response)=>{
+    const {pid} = request.params
+    const pid_casteado = parseInt(pid, 10)
+    if(!isNaN(pid)){
+        const producto_selec = control_productos.getProductById(pid_casteado)
+        if(producto_selec == 'ERROR 404: Product not found.'){
+            return response.send('404 not found')
+        }else{
+            return response.send(producto_selec)
+        }
+    }else{
+        return response.send('ERROR 400: Bad Request.')
+    }
+
+    
+
 })
 
 
-
-
 app.get('/products',(request, response)=>{
-    const limit = parseInt(request.query.limit, 10)
+    const limit = request.query.limit
 
     if(!limit){
-        return response.send(DB)
+        return response.send('ERROR 404: Not Found.')
     }else{
         if(isNaN(limit) || (limit> DB.length || limit<1)){
-            return response.send("ERROR: El limite de productos no es correcto")
+            return response.send("ERROR 400: Bad request.")
         }else{
-            const productos_mostrados = limit ? DB.slice(0, limit) : DB
+            const limit_casteado = parseInt(limit, 10)
+            const productos_mostrados = limit_casteado ? DB.slice(0, limit_casteado) : DB
             return response.send(productos_mostrados)
         }
     }

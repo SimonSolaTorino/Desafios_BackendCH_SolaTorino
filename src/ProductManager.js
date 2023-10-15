@@ -72,7 +72,8 @@ class ProductManager {
                 const array_productos = JSON.parse(cadena_json)
                 const producto_seleccionado = array_productos.find(objeto_productos => objeto_productos.id === num_id)
                 if(producto_seleccionado === undefined){
-                   return console.log(`ERROR: no se encontro ningun producto con el id ${num_id}`)
+                    const mensaje_error = 'ERROR 404: Product not found.'
+                    return mensaje_error
 
                 }
                 else{
