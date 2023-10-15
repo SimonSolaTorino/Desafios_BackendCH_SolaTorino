@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "title": "F!NE BEAUTY",
+    "description": 10.99,
+    "price": "Sabor tropical fruits",
+    "thumbnail": "imagen_beauty.jpg",
+    "code": "FNBT01",
+    "stock": 100
+  },
+  {
+    "id": 2,
+    "title": "F!NE POWER",
+    "description": 19.99,
+    "price": "Sabor red fruits",
+    "thumbnail": "imagen_power.jpg",
+    "code": "FNPW02",
+    "stock": 50
+  },
+  {
+    "id": 3,
+    "title": "F!NE SMOOTH",
+    "description": 14.99,
+    "price": "Sabor blueberrys",
+    "thumbnail": "imagen_smooth.jpg",
+    "code": "FNSM03",
+    "stock": 75
+  },
+  {
+    "id": 4,
+    "title": "F!NE PEAK",
+    "description": 14.99,
+    "price": "Sabor tropical cream",
+    "thumbnail": "imagen_peak.jpg",
+    "code": "FNPK04",
+    "stock": 25
+  }
+]
